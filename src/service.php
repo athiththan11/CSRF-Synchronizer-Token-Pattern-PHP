@@ -10,6 +10,11 @@
     if(isset($_POST['logout'])){
         logout();
     } else if (isset($_POST['csrf_request'])){
-        echo "Somethings here";
+        
+        if($_POST['csrf_request'] == $_COOKIE['csrf_session_cookie']){
+            echo "Somethings here";
+        }else {
+            echo "Something went wrong";
+        }
     }
 ?>
