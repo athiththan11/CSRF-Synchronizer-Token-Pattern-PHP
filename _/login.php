@@ -31,7 +31,7 @@
 <body>
     
     <div class="container">
-        <form action="" method="POST">
+        <form action="login.php" method="POST">
             <div>
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" />
