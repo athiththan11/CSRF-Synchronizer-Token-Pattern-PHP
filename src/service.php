@@ -21,6 +21,7 @@
     /**
      * csrf token generation
      *
+     * @var $session session_id
      * @return void
      */
     function generateCSRFToken($session, $length = 10) {
@@ -48,9 +49,12 @@
     } elseif (isset($_POST['csrf_request'])){
 
         if($_POST['csrf_request'] == $_COOKIE['csrf_session_cookie']){
-            echo generateCSRFToken($_COOKIE['csrf_session_cookie']);
-        }else {
-            echo "Something went wrong";
+
+            // echo generateCSRFToken($_COOKIE['csrf_session_cookie']);
+            echo $_SESSION['csrf_token_string'];
+
+        }else { 
+            echo "nullstring"; 
         }
 
     } else if (isset($_POST['verify'])){

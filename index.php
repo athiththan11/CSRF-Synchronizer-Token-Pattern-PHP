@@ -2,7 +2,7 @@
 
     session_start();
 
-    if(!isset($_SESSION['csrf_session'])){
+    if(!isset($_COOKIE['csrf_session_cookie']) || !isset($_SESSION['csrf_session'])){
         header("location: ./_/login.php");
     }
 
