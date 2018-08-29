@@ -8,7 +8,7 @@
         $password = $_POST['password'];
 
         if(($username == "csrf") && ($password == "token")){
-            $_SESSION['csrf_session'] = "CSRF STP Sample PHP";
+            $_SESSION['csrf_session'] = "csrfstpsamplephp";
 
             setcookie("csrf_session_cookie", session_id(), (time() + (56400)), "/");
             header("location: ./../../index.php");

@@ -29,7 +29,7 @@
                 echo 
                     '<li class="nav-item">
                         <form class="nav-link" method="POST" action="/src/service.php">
-                            <button class="btn btn-link" type="submit" value="Logout" name="logout">Lgout</button>
+                            <button class="btn btn-link" type="submit" value="Logout" name="logout">Logout</button>
                         </form>
                     </li>';
             }
@@ -53,14 +53,14 @@
                             <input type="hidden" id="csrf_token" name="csrf_token" value="csrf" />
 
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" />
+                                <label for="php">Do you like PHP ?</label>
+                                <input type="text" class="form-control" id="php" name="php" placeholder="not at all... ;) " required autofocus/>
                             </div>
                             <div class="form-group">
-                                <label for="some">Some</label>
-                                <input type="text" class="form-control" id="some" name="some" />
+                                <label for="demo">Do you like this demo ?</label>
+                                <input type="text" class="form-control" id="demo" name="demo" placeholder="waiting for your answer .... :D" required/>
                             </div>
-                            <button type="submit" class="btn btn-success btn-block mt-5" name="submit">Submit</button>
+                            <button type="submit" class="btn btn-success btn-block mt-5" name="verify">Submit</button>
                         </form>
                         <!-- End csrf form -->
 
@@ -74,7 +74,10 @@
                 <h4>CSRF Synchronizer Token Pattern</h4>
                 <hr class="my-4">
                 <p>
-                    Lorem Ipsum
+                    Provided form is a sample form to explain the <i>Synchronizer Token Pattern</i>. This form contains 
+                    a hidden input field to store the CSRF token to verify the process of submission. <br/><br/>
+                    The ajax call script can be found at the bottom of <b>index.php</b> file. <br/><br/>
+                    The newly generated CSRF token is <b><i> <span id="csrf_token_string"></span> </i></b>
                 </p>
             </div>
             <!-- End Description block -->
@@ -89,12 +92,13 @@
             $.ajax({
                 url: '/src/service.php',
                 type: 'post',
+                async:false,
                 data: {
                     'csrf_request': '<?php echo $_COOKIE['csrf_session_cookie'] ?>'
                 },
                 success: function (data) {
-                    console.log(data);
                     document.getElementById("csrf_token").value = data;
+                    $("#csrf_token_string").text(data);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     console.log("Something went wrong :: " + xhr.responseText);
