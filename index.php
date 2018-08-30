@@ -33,7 +33,7 @@
                         </form>
                     </li>';
             }
-        ?> 
+        ?>
     </ul>
 
     <div class="container">
@@ -71,13 +71,15 @@
 
             <!-- Description block -->
             <div class="col-md-6 mx-auto my-5">
-                <h4>CSRF Synchronizer Token Pattern</h4>
+                <h4>Yay! Welcome...</h4>
                 <hr class="my-4">
                 <p>
-                    Provided form is a sample form to explain the <i>Synchronizer Token Pattern</i>. This form contains 
-                    a hidden input field to store the CSRF token to verify the process of submission. <br/><br/>
-                    The ajax call script can be found at the bottom of <b>index.php</b> file. <br/><br/>
-                    The newly generated CSRF token is <b><i> <span id="csrf_token_string"></span> </i></b>
+                    A sample form is provided here to explain the Synchronizer Token Pattern's implementation and usage. This form contains a
+                    hidden input field to store the <abbr title="Cross Site Request Forgery">CSRF</abbr>
+                    token to verify the process of submission. <br/><br/> Synchronizer Token Pattern is one of the implementation
+                    to prevent Cross-site attacks.<br/><br/> The ajax call script can be found at the bottom of <b>index.php</b>
+                    file. <br/><br/> The newly generated CSRF token is <b><i> <span id="csrf_token_string"></span>
+                        </i></b>
                 </p>
             </div>
             <!-- End Description block -->
@@ -92,7 +94,7 @@
             $.ajax({
                 url: '/src/service.php',
                 type: 'post',
-                async:false,
+                async: false,
                 data: {
                     'csrf_request': '<?php echo $_COOKIE['csrf_session_cookie'] ?>'
                 },
