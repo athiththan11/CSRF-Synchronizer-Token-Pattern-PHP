@@ -2,6 +2,8 @@
 
 A sample implementation of CSRF Synchronizer Token Pattern in PHP
 
+[live demo](https://csrf-stp.herokuapp.com)
+
 ## How to
 
 ### Install PHP
