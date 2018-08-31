@@ -33,6 +33,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<title>CSRF Synchronizer Token Pattern | Login</title>
 
 	<?php include (realpath(__DIR__)."/addons/header.php") ?>
@@ -86,16 +87,16 @@
 					<li><span>Password: token</span></li>
 				</ul>
 				<br/>
-				<a class="disabled" href="https://github.com/athiththan11/csrf-synchronizer-token-pattern-php"><i data-feather="github"></i>
+				<a class="disabled" href="https://github.com/athiththan11/csrf-synchronizer-token-pattern-php" target="_blank"><i data-feather="github"></i>
 					Github Repo</a>
 				<br/><br/>
 				<small>Check out CSRF Double Submit Cookies Pattern implementation on PHP in
 					<ul class="list-inline">
 						<li class="list-inline-item">
-							<a class="disabled" href="https://github.com/athiththan11/csrf-double-submit-cookies-pattern-php">Github</a>
+							<a class="disabled" href="https://github.com/athiththan11/csrf-double-submit-cookies-pattern-php" target="_blank">Github</a>
 						</li>
 						<li class="list-inline-item">
-							<a class="disabled" href="https://csrf-dscp.herokuapp.com">Heroku</a>
+							<a class="disabled" href="https://csrf-dscp.herokuapp.com" target="_blank">Heroku</a>
 						</li>
 					</ul>
 				</small>
