@@ -24,7 +24,7 @@
      * @var $session session_id
      * @return void
      */
-    function generateCSRFToken($session, $length = 10) {
+    function generateCSRFToken($session, $length = 32) {
 
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
