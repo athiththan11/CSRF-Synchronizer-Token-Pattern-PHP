@@ -100,6 +100,10 @@
 						</li>
 					</ul>
 				</small>
+				<br/>
+				<a class="text-muted disabled" href="https://medium.com/@code19111995/cross-site-request-forgery-aa396341eb7c" target="_blank">
+					<img src="https://cdn-images-1.medium.com/max/1600/1*TGH72Nnw24QL3iV9IOm4VA.png" width="80" />
+				</a>
 			</div>
 			<!-- End Description block -->
 

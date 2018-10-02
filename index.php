@@ -72,25 +72,46 @@
 
             <!-- Description block -->
             <div class="col-md-6 mx-auto my-5 align-self-center">
-                <h4>Yay! Welcome...</h4>
+                <h4>CSRF Synchronizer Token Pattern</h4>
                 <hr class="my-4">
                 <p>
                     Provided form is a sample form to explain the <i>Synchronizer Token Pattern</i>. This form contains a
                     hidden input field to store the CSRF token to verify the process of submission. <br/><br/> The generated
                     CSRF token is <b><i> <span id="csrf_token_string"></span> </i></b>
                 </p>
-                <br/>
                 <p class="text-justify">
-                    CSRF attacks are done by stealing the sessions and executing confidential moves with the server without any knowlegde to
-                    the end-user. To brief, assume this application as a private banking site which is used to transfer money
-                    between multiple accounts and users. The attacker can steal the session, and perform all the transactions
-                    to his or any private account without your knowledge and interactions with the system. In order to perform
-                    session stealing activity, attackers use custom crafted links and sites as promotional advertisements
-                    to force the end-user to click on it.
+                    CSRF attacks are done by using the sessions of another authenticated user and executing confidential moves 
+                    with the server without any knowlegde to the end-user. To brief, assume this application as a private 
+                    banking site which is used to transfer money between multiple accounts. You are a registered user 
+                    of this private bank and you want to do some transactions and check the balances in your accounts. So, you 
+                    just did authenticated by the private banking site by providing your credentials.
+                </p>
+                <p class="text-justify">
+                    A session will start as soon as you authenticate with the system, and this is used to keep you logged in 
+                    to the system until you logout or close the browser. You made a simple transaction between your accounts, 
+                    and you navigate to another different page and see some advertisements saying <b>'Click Here'</b>. You click 
+                    on it, then the attacker can use your session to perform the transaction from your private bank account to 
+                    any other account.
                 </p>
             </div>
             <!-- End Description block -->
 
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md pb-5">
+                        <p class="text-secondary text-center">
+                            Attackers use your authenticated sessions to perform authenticated state changes without your knowledge 
+                            and interactions. In order to perform CSRF attacks, attackers use custom crafted links and sites as 
+                            promotional advertisements to force the end-user to click on it.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -109,7 +130,7 @@
                             server for later verification.
                         </p>
                         <p class="text-secondary text-justify">
-                            An ajax call is made to retrieve the generated CSRF token from server when loading the page. The retrieved CSRF token is
+                            An ajax call is made to retrieve the generated CSRF token from the server when loading the page. The retrieved CSRF token is
                             then append into a hidden input field which is placed in the form. The ajax call script can be
                             found at the bottom of <b>index.php</b> file. <br/><br/> The following
                             code snippet represents the hidden input field.
@@ -127,7 +148,6 @@
                             <i data-feather="github"></i>
                             Github Repo
                         </a>
-
                     </div>
 
                     <div class="col-md-6 mx-auto align-self-center">
