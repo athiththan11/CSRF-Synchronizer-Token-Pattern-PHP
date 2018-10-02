@@ -10,7 +10,7 @@
         if(($username == "csrf") && ($password == "token")){
 
 			// set a session variable
-            $_SESSION['csrf_session'] = "csrfstpsamplephp";
+			$_SESSION['csrf_session'] = "csrfstpsamplephp";
 
 			// regenerate an id for session and store it in a cookie
 			session_regenerate_id();

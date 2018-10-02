@@ -38,7 +38,7 @@
         $randomString .= $session[rand(0, strlen($session) - 5)];
         
         // store the generated csrf token string in a session variable
-        $_SESSION['csrf_token_string'] = $randomString;
+        $_SESSION[$session] = $randomString;
         return $randomString;
     }
 
@@ -48,18 +48,21 @@
 
     } elseif (isset($_POST['csrf_request'])){
 
-        if($_POST['csrf_request'] == $_COOKIE['csrf_session_cookie']){
+        $sessionId = $_POST['csrf_request'];
 
-            // echo generateCSRFToken($_COOKIE['csrf_session_cookie']);
-            echo $_SESSION['csrf_token_string'];
+        if($_SESSION[$sessionId]){
 
-        }else { 
-            echo "nullstring"; 
+            echo $_SESSION[$sessionId];
+
+        }else {
+            echo "nullstring";
         }
 
     } else if (isset($_POST['verify'])){
 
-        if($_POST['csrf_token'] == $_SESSION['csrf_token_string']){
+        $sessionId = $_COOKIE["csrf_session_cookie"];
+
+        if($_POST['csrf_token'] == $_SESSION[$sessionId]){
             header("location: ./../../_/success.php");
         }else {
             header("location: ./../../_/error.php");
